@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kura Kitchen</title>
+  <style>
+    :root {
+      --bg1: #2b1b0f;
+      --bg2: #3e2615;
+      --card: rgba(30, 20, 10, 0.95);
+      --accent: #ffb347;
+      --primary: #b3541e;
+      --primary-hover: #8a3e14;
+      --text: #f5f5f5;
+    }
+
+    html { scroll-behavior: smooth; }
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, var(--bg1), var(--bg2));
+      color: var(--text);
+    }
+
+    /* Header & Top Menu */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--card);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 22px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand h1 { margin: 0; color: var(--accent); font-size: 22px; letter-spacing: 0.5px; }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+    nav a {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    nav a:hover { background: rgba(255,255,255,0.15); }
+
+    .btn {
+      background: var(--primary);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .btn:hover { background: var(--primary-hover); }
+
+    .hero {
+      text-align: center;
+      padding: 84px 20px 70px;
+      background: url('https://cdn.midjourney.com/3a81289b-fbd5-4955-bc0f-f7267143bbce/0_1.png') center/cover no-repeat;
+      color: #fff0e0;
+    }
+    .hero h2 {
+      font-size: 3em;
+      font-weight: bold;
+      background: rgba(0,0,0,0.6);
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 15px;
+      margin: 0;
+    }
+    .hero p {
+      margin: 20px auto 0;
+      font-size: 18px;
+      background: rgba(0,0,0,0.6);
+      display: inline-block;
+      padding: 10px 15px;
+      border-radius: 12px;
+      max-width: 760px;
+      line-height: 1.6;
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .section h3 {
+      text-align: center;
+      font-size: 2em;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+
+    /* Cards / grids */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: rgba(0,0,0,0.25);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
+    .card h4 { margin: 0 0 8px; color: var(--accent); }
+    .muted { color: #e7d6c8; opacity: 0.95; }
+
+    footer {
+      text-align: center;
+      background: #1e140a;
+      color: var(--accent);
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with top menu -->
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <h1>Kura Kitchen</h1>
+      </div>
+      <nav aria-label="Головне меню">
+        <ul>
+          <li><a href="#home">Головна</a></li>
+          <li><a href="#menu">Меню</a></li>
+          <li><a href="#about">Про нас</a></li>
+          <li><a href="#delivery">Доставка</a></li>
+          <li><a href="#contact">Контакти</a></li>
+          <li><a class="btn" href="#order">Замовити</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <h2>Соковиті кури гриль <br /> та домашня кухня</h2>
+      <p>
+        У Kura Kitchen ми віримо, що справжній смак народжується з простих речей:
+        якісних продуктів, вогню та любові до кулінарії. Наші кури гриль мають
+        хрустку золотисту скоринку та неймовірний аромат спецій, який одразу
+        переносить вас у світ затишку та тепла. Ми готуємо так, ніби для власної
+        родини — щиро, чесно та смачно.
+      </p><br />
+      <a class="btn" href="#menu" style="margin-top:20px; display:inline-block;">Дізнатися більше</a>
+    </section>
+
+    <!-- Themed extra content: highlights -->
+    <section id="menu" class="section">
+      <h3>Меню Хіта</h3>
+      <div class="grid">
+        <article class="card">
+          <h4>Курка гриль «Класична»</h4>
+          <p class="muted">Сік зберігаємо всередині, а шкірка — рум’яна й хрумка. Подаємо з фірмовим соусом та запеченою картоплею.</p>
+        </article>
+        <article class="card">
+          <h4>Курка BBQ</h4>
+          <p class="muted">Димний аромат, легка карамель на скоринці та збалансована гостринка. Ідеально до колекції наших соусів.</p>
+        </article>
+        <article class="card">
+          <h4>Страва дня</h4>
+          <p class="muted">Щодня готуємо щось особливе — від ніжного курячого філе до домашніх супів. Запитайте на касі або в чаті.</p>
+        </article>
+        <article class="card">
+          <h4>Гарніри та салати</h4>
+          <p class="muted">Запечені овочі, пюре, рис з овочами, грецький салат і вітамінні мікси — легкі та поживні доповнення до основних страв.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h3>Про нас</h3>
+      <p style="text-align:center; font-size:18px; line-height:1.7; max-width:860px; margin:0 auto;">
+        Kura Kitchen — це сімейний заклад, де поєднано традиційні рецепти та сучасний підхід до приготування. 
+        Ми працюємо на відкритому жарі, використовуємо добірні спеції та надаємо перевагу локальним продуктам. 
+        Кожна страва має свою історію та створена з особливою увагою до деталей. Ми прагнемо, щоб кожен гість 
+        відчув тепло нашої кухні та отримав справжнє задоволення від їжі.
+      </p>
+    </section>
+
+    <section id="delivery" class="section" style="background: rgba(0,0,0,0.15);">
+      <h3>Доставка та самовивіз</h3>
+      <div class="grid">
+        <div class="card">
+          <h4>Швидка доставка</h4>
+          <p class="muted">Доставляємо гарячі страви в термопакуванні. Середній час — 30–45 хв залежно від району.</p>
+        </div>
+        <div class="card">
+          <h4>Самовивіз без черги</h4>
+          <p class="muted">Зробіть попереднє замовлення — ми приготуємо до вашого приїзду та передамо без очікування.</p>
+        </div>
+        <div class="card">
+          <h4>Оплата</h4>
+          <p class="muted">Готівка, картка або онлайн. Для корпоративних клієнтів — рахунок-фактура й закриті документи.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="order" class="section">
+      <h3>Замовити</h3>
+      <p style="text-align:center; max-width:720px; margin:0 auto 18px;" class="muted">
+        Залиште заявку в чаті або зателефонуйте нам — ми підкажемо найкращі позиції під ваш смак і кількість гостей.
+      </p>
+      <div style="text-align:center; margin-top:8px;">
+        <a class="btn" href="#contact">Зв'язатися</a>
+      </div>
+    </section>
+
+    <section id="contact" class="section" style="background:#2b1b0f;">
+      <h3>Контакти</h3>
+      <p style="text-align:center; font-size:18px;">
+        📍 Санкт-Петербург, Кудрово, вул. Строителей, 16
+      </p>
+      <p style="text-align:center; font-size:18px;">📞 +7 (000) 000-00-00</p>
+      <p style="text-align:center; font-size:18px;">🕒 Щодня 10:00 — 22:00</p>
+      <!-- Yandex Map widget: search by the provided address -->
+      <div style="margin-top:20px; border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,0.12);">
+        <iframe
+          title="Yandex Map — Санкт-Петербург, Кудрово, вул. Строителей, 16"
+          src="https://yandex.com/map-widget/v1/?mode=search&z=15&text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%9A%D1%83%D0%B4%D1%80%D0%BE%D0%B2%D0%BE%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%A1%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%B9%2C%2016"
+			width="100%"
+          height="430"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p style="text-align:center; margin-top:10px;">
+        Якщо віджет не завантажився, відкрийте адресу у <a style="color:#ffd29b;" target="_blank" rel="noopener" href="https://yandex.com/maps/?mode=search&text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%9A%D1%83%D0%B4%D1%80%D0%BE%D0%B2%D0%BE%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9F%D1%80%D0%B0%D0%B6%D1%81%D0%BA%D0%B0%D1%8F%2C%2015">Яндекс картах</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Kura Kitchen. Всі права захищено.
+  </footer>
+</body>
+</html>
